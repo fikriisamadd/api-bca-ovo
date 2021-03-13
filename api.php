@@ -1,13 +1,13 @@
 <?php
 // AMBIL API KEY DISINI : 
-// https://api.xavi3r.com
+// https://api.xavi3r.id
 
 $api_key = "xxxxxxxxxxxxx";
 $nominal = isset($_GET['nominal']) ? $_GET['nominal'] : '';
 
 function Mutasi_OVO($api_key, $nominal = 0) { // Untuk mengambil data mutasi OVO dengan filter jumlah nominal
   $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL,"https://api.xavi3r.com/apiv1/ovo/mutasi/");
+  curl_setopt($ch, CURLOPT_URL,"https://api.xavi3r.id/apiv1/mutasi/ovo");
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS,'api_key='.$api_key.'&quantity='.$nominal);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
@@ -19,7 +19,7 @@ function Mutasi_OVO($api_key, $nominal = 0) { // Untuk mengambil data mutasi OVO
 
 function Mutasi_BCA($api_key, $nominal = 0) { // Untuk mengambil data mutasi Bank BCA dengan filter jumlah nominal
   $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL,"https://api.xavi3r.com/apiv1/bca/mutasi/");
+  curl_setopt($ch, CURLOPT_URL,"https://api.xavi3r.id/apiv1/mutasi/bca");
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS,'api_key='.$api_key.'&quantity='.$nominal);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
@@ -31,7 +31,7 @@ function Mutasi_BCA($api_key, $nominal = 0) { // Untuk mengambil data mutasi Ban
 
 function Info_BCA_OVO($api_key) { // Untuk mengambil data saldo, nama rek, nomor ovo
   $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL,"https://api.xavi3r.com/apiv1/info/");
+  curl_setopt($ch, CURLOPT_URL,"https://api.xavi3r.id/apiv1/info");
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS,'api_key='.$api_key);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
